@@ -12,11 +12,3 @@ const mockUpStrand = () => {
   }
   return newStrand;
 };
-
-
-
-
-
-
-
-
