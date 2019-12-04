@@ -13,9 +13,12 @@ const mockUpStrand = () => {
   return newStrand;
 };
 
-const pAequorFactor(specimenNum,dna){
+const pAequorFactor=(specimenNum,dna)=>{
   return {
     specimenNum,
     dna,
   }
 };
+
+const newObject=pAequorFactor(1,mockUpStrand());
+console.log(newObject);
