@@ -18,13 +18,19 @@ const pAequorFactor=(specimenNum,dna)=>{
     specimenNum,
     dna,
     mutate(){
-      const originalBase=dna[Math.floor(Math.random()*dna.length)];
+      const random=Math.floor(Math.random()*this.dna.length);
+      const originalBase=this.dna[random];
+      const dnaBases = ['A', 'T', 'C', 'G'];
       const index=dnaBases.indexOf(originalBase);
-      index>-1? dnaBases.splice(index,1);
-      return dna.splice(index,1,dnaBases[Math.floor(Math.random()*dnaBases.length)]);
+      if (index>-1) {dnaBases.splice(index,1)};
+      return this.dna.splice(random,1,dnaBases[Math.floor(Math.random()*dnaBases.length)]);
     },
   }
 };
 
 const newObject=pAequorFactor(1,mockUpStrand());
 console.log(newObject);
+console.log(`the DNA before mutation ${newObject.dna}`)
+console.log('\n');
+newObject.mutate();
+console.log(`Así queda el dna nuevo ${newObject.dna}`);
