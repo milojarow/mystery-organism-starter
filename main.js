@@ -17,6 +17,12 @@ const pAequorFactor=(specimenNum,dna)=>{
   return {
     specimenNum,
     dna,
+    mutate(){
+      const originalBase=dna[Math.floor(Math.random()*dna.length)];
+      const index=dnaBases.indexOf(originalBase);
+      index>-1? dnaBases.splice(index,1);
+      return dna.splice(index,1,dnaBases[Math.floor(Math.random()*dnaBases.length)]);
+    },
   }
 };
 
