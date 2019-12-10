@@ -22,7 +22,7 @@ const pAequorFactor=(specimenNum,dna)=>{
       const originalBase=this.dna[random];
       const dnaBases = ['A', 'T', 'C', 'G'];
       const index=dnaBases.indexOf(originalBase);
-      if (index>-1) {dnaBases.splice(index,1)};
+      index>-1 && dnaBases.splice(index,1);
       return this.dna.splice(random,1,dnaBases[Math.floor(Math.random()*dnaBases.length)]);
     },
   }
