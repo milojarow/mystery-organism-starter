@@ -35,6 +35,16 @@ const pAequorFactor=(specimenNum,dna)=>{
       const percentage=(counter/this.dna.length)*100;
       console.log(`Specimen #${previousObject.specimenNum} and specimen #${this.specimenNum} have ${percentage.toFixed(2)}% DNA in common`)
     },
+    willLikelySurvive(){
+      let i=0;
+      let counter=0;
+      while (i<this.dna.length){
+        this.dna[i]==='C'||this.dna[i]==='G'?counter+=1:counter=counter;
+        i++;
+      };
+      const percentage=(counter/this.dna.length)*100;
+      return percentage>=60?true:false;
+    },
   }
 };
 
@@ -42,4 +52,5 @@ const object1=pAequorFactor(1,mockUpStrand());
 console.log(object1);
 const object2=pAequorFactor(2,mockUpStrand());
 console.log(object2);
-object2.compareDNA(object1);
+console.log(object1.willLikelySurvive());
+console.log(object2.willLikelySurvive());
