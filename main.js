@@ -25,12 +25,21 @@ const pAequorFactor=(specimenNum,dna)=>{
       index>-1 && dnaBases.splice(index,1);
       return this.dna.splice(random,1,dnaBases[Math.floor(Math.random()*dnaBases.length)]);
     },
+    compareDNA(previousObject){
+      let i=0;
+      let counter=0;
+      while (i<this.dna.length){
+        previousObject.dna[i]===this.dna[i]? counter+=1:counter=counter;
+        i++;
+      };
+      const percentage=(counter/this.dna.length)*100;
+      console.log(`Specimen #${previousObject.specimenNum} and specimen #${this.specimenNum} have ${percentage.toFixed(2)}% DNA in common`)
+    },
   }
 };
 
-const newObject=pAequorFactor(1,mockUpStrand());
-console.log(newObject);
-console.log(`the DNA before mutation ${newObject.dna}`)
-console.log('\n');
-newObject.mutate();
-console.log(`Así queda el dna nuevo ${newObject.dna}`);
+const object1=pAequorFactor(1,mockUpStrand());
+console.log(object1);
+const object2=pAequorFactor(2,mockUpStrand());
+console.log(object2);
+object2.compareDNA(object1);
