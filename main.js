@@ -48,9 +48,17 @@ const pAequorFactor=(specimenNum,dna)=>{
   }
 };
 
-const object1=pAequorFactor(1,mockUpStrand());
-console.log(object1);
-const object2=pAequorFactor(2,mockUpStrand());
-console.log(object2);
-console.log(object1.willLikelySurvive());
-console.log(object2.willLikelySurvive());
+let instancesToSurvive=[];
+let j=0;
+let count=0;
+let object='object';
+while(count<=30){
+  var variable=object.concat(j);
+  console.log(variable);
+  variable=pAequorFactor(j,mockUpStrand());
+  variable.willLikelySurvive()===true?instancesToSurvive.push(variable):instancesToSurvive=instancesToSurvive;
+  console.log(variable);
+  j++;
+  count=instancesToSurvive.length+1;
+};
+console.log(instancesToSurvive);
