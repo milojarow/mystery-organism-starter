@@ -45,6 +45,17 @@ const pAequorFactor=(specimenNum,dna)=>{
       const percentage=(counter/this.dna.length)*100;
       return percentage>=60?true:false;
     },
+    complementStrand(){
+      let complementArray=[];
+      for(let i=0;i<this.dna.length;i++){
+        if      (this.dna[i]==='A'){complementArray.push('T')}
+        else if (this.dna[i]==='T'){complementArray.push('A')}
+        else if (this.dna[i]==='C'){complementArray.push('G')}
+        else if (this.dna[i]==='G'){complementArray.push('C')}
+        else {break;};
+      };
+      return complementArray;
+    },
   }
 };
 
