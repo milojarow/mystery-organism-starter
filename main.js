@@ -25,7 +25,7 @@ const pAequorFactor=(specimenNum,dna)=>{
       index>-1 && dnaBases.splice(index,1); // deletes de matching element so the program can replace it with one of the remainigs
       return this.dna.splice(random,1,dnaBases[Math.floor(Math.random()*dnaBases.length)]); // replaces the random element
     },
-    compareDNA(previousObject){ //inciso 4: METHOD compara dos cadenas de adn del objeto actual y el objeto previo
+    compareDNA(previousObject){ //inciso 4: METHOD compara dos cadenas de adn del objeto actual y el objeto previo (al mandarlo llamar se aclaran tus dudas. Hazlo en tu mente)
       let i=0;
       let counter=0;
       while (i<this.dna.length){
